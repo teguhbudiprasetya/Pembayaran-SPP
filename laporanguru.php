@@ -57,7 +57,9 @@
             <td>
                 <button  onclick="window.print()">Cetak</button>
             </td>
-            <td><button><a href="laporan.php" style="text-decoration: none; color:black">Kembali</a></button></td>
+            <td>
+                <button><a href="laporan.php" style="text-decoration: none; color:black">Kembali</a></button>
+            </td>
         </tr>
     </table>
 </form>

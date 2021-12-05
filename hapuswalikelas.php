@@ -8,7 +8,8 @@
             header('location:datawalikelas.php');
         }
         else{
-            echo "Hapus data gagal<br> 
+            echo "Hapus data gagal!<br>
+            $_GET[kls] masih memiliki siswa <br> 
             <a href='datawalikelas.php'><<<Kembali</a>";
         }
     }

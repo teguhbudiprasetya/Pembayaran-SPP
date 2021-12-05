@@ -45,6 +45,7 @@
                     $_SESSION['login'] = true;
                     $_SESSION['id'] = $d['idadmin'];
                     $_SESSION['username'] = $d['username'];
+                    $_SESSION['password'] = $d['password'];
 
                     header('location:index.php');
                 }

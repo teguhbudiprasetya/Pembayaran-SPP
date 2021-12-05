@@ -6,8 +6,6 @@ $sqlEdit = mysqli_query($connect, "SELECT * FROM guru WHERE idguru='$_GET[id]'")
 // echo $_GET;
 // echo print_r($_GET);
 $e=mysqli_fetch_array($sqlEdit);
-var_dump($_GET['id']);
-echo $_GET['id'];
 ?>
 <h3>Edit Data Guru</h3>
 <form method="post" action="">

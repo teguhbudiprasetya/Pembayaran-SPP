@@ -20,7 +20,7 @@
     
     <h3>Aplikasi Pembayaran SPP</h3>
     <hr>
-    <a href="">Data admin</a>
+    <a href="dataadmin.php">Data admin</a>
     <a href="dataguru.php">Data guru</a>
     <a href="datawalikelas.php">Data wali kelas</a>
     <a href="datasiswa.php">Data siswa</a>
