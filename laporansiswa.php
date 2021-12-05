@@ -55,7 +55,15 @@
                         <option value="semua">Semua</option>
                 </select>
             </td>
-            <td><input type="submit" name="button" value="Cari" ></td>
+            <td>
+                <input type="submit" name="button" value="Cari" >
+            </td>
+            <td>
+                <button  onclick="window.print()">Cetak</button>
+            </td>
+            <td>
+                <button><a href="laporan.php" style="text-decoration: none; color:black">Kembali</a></button>
+            </td>
         </tr>
         
     </table>
@@ -158,7 +166,6 @@
      <p>Sebasitan Alexander Kurniawan</p>
      <p id="nip">NIP : 200411123 231</p>
 </div>
-<button  onclick="window.print()">Cetak</button>
 <script>
     document.title ="Laporan Siswa <?=$_GET['kelas']?> <?=date('M-Y')?> ";
 </script>

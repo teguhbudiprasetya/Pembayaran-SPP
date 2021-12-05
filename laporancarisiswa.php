@@ -29,6 +29,7 @@
 
 <h3>SMK NEGERI 1 BRONDONG<br>Laporan Pembayaran SPP</h3>
 <h4>Periode: <?= $_GET['dari']?> - <?= $_GET['hingga'] ?></h4>
+<button onclick="window.print()">Cetak</button>
 <hr>
 <table border="1"style="width: 100%; border-collapse: collapse;">
             <tr>
@@ -69,6 +70,5 @@
     ?>
 
 </table>
-<button onclick="window.print()">Cetak</button>
 </body>
 </html>
