@@ -14,6 +14,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplikasi Pembayaran SPP</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
@@ -31,7 +35,7 @@
 <h4>Periode: <?= $_GET['dari']?> - <?= $_GET['hingga'] ?></h4>
 <button onclick="window.print()">Cetak</button>
 <hr>
-<table border="1"style="width: 100%; border-collapse: collapse;">
+<table class="table table-hover table-striped table-bordered">
             <tr>
                 <th>No</th>
                 <th>NIS</th>
@@ -51,6 +55,7 @@
     // echo print_r($sql);
     $no = 1;
     if(isset($sql)){
+        $jumlah = 0;
         while($d= mysqli_fetch_array($sql)){
             echo"
             <tr>
@@ -64,11 +69,13 @@
             </tr>
             
             ";
+            $jumlah += $d['jumlah'];
             $no++;    
         }
     }
     ?>
-
+    
 </table>
+<p>Jumlah : Rp.<?= $jumlah; ?></p>   
 </body>
 </html>

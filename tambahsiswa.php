@@ -1,14 +1,67 @@
 <?php
     include "header.php";
-    // $tahunajaran = strtotime(date("Y"));
+    ob_start();
     
     $idadmin = $_SESSION['id'];
-    // echo $idadmin;
 ?>
-
-    <h3>Tambah Data Siswa</h3>
+    <h1>Tambah Data Siswa</h1>
     <form method="post" action="">
-        <table>
+    <div class='form-group'>
+        <label for='password'>NIS</label>
+        <div class='form-control-lg'>
+            <input type='text' class='form-control'  name='nissiswa'>
+        </div>
+    </div>
+    <div class='form-group'>
+        <label for='password'>Nama Siswa</label>
+            <div class='form-control-lg'>
+                <input type='text' class='form-control'  name='namasiswa'>
+            </div>
+    </div>    
+    <div class='form-group'>
+        <label for='password'>Kelas</label>
+            <div class='form-control-lg'>
+			<select class="form-control" name="kelassiswa">
+                <option value="" selected> ---Pilih Kelas--- </option>
+					<?php
+						$sqlEditKelas = mysqli_query($connect, "SELECT * FROM walikelas ORDER BY idguru");
+                        while ( $x = mysqli_fetch_array($sqlEditKelas)) {
+                            echo "<option value='$x[kelas]' $select > $x[kelas] </option>";
+                        }
+					
+					?>
+			
+				</select>
+        	</div>
+        </div>
+        <div class="form-group">
+            <label for='tahunjaran'>Tahun Ajaran</label>
+                <?php 
+                    $startdateTahunAjaran=strtotime(date("F j Y"));
+                    $enddateTahunAjaran=strtotime("+1 Years", $startdateTahunAjaran); 
+                ?>
+                <div class='form-control-lg'>
+                    <input type="text" class="form-control" name="tahunajaran" value="<?= date("Y"); ?>/<?= date("Y", $enddateTahunAjaran)?>" readonly>
+                </div>
+        </div>
+        <div class="form-group">
+        <label for='password'>Biaya</label>
+            <div class='form-control-lg'>
+        		<input type='text' class='form-control'  name='biaya' value="50000" readonly>
+        	</div>
+        </div>
+        <div class="form-group">
+        <label for='password'>Jatuh Tempo</label>
+            <div class='form-control-lg'>
+        		<input type='text' class='form-control'  name='tempo' value="<?php echo date("Y-m-d"); ?>" readonly>
+        	</div>
+        </div>
+        <div style="margin-top: 17px;" class='form-group row'>
+            <div class='col-sm-10'>
+                <button type='submit' class='btn btn-success'>Simpan</button>
+            </div>
+        </div>
+        <!-- <table>
             <tr>
                 <td>NIS</td>
                 <td><input type="text" name="nissiswa"></td>
@@ -23,10 +76,7 @@
                     <select name="kelassiswa">
                         <option value="" selected> ---Pilih Kelas--- </option>
                         <?php
-                            $sqlEditKelas = mysqli_query($connect, "SELECT * FROM walikelas ORDER BY idguru");
-                            while ( $x = mysqli_fetch_array($sqlEditKelas)) {
-                                echo "<option value='$x[kelas]' $select > $x[kelas] </option>";
-                        }
+                            
                         ?>
                 
                     </select>
@@ -35,9 +85,9 @@
             <tr>
                 <td>Tahun Ajaran</td>
                 <?php 
-                    $startdateTahunAjaran=strtotime(date("F j Y"));
-                    $enddateTahunAjaran=strtotime("+1 Years", $startdateTahunAjaran); 
-                ?>
+                //     $startdateTahunAjaran=strtotime(date("F j Y"));
+                //     $enddateTahunAjaran=strtotime("+1 Years", $startdateTahunAjaran); 
+                // ?>
                 <td><input type="text" name="tahunajaran" value="<?= date("Y"); ?>/<?= date("Y", $enddateTahunAjaran)?>" readonly>
             <tr>
                 <td>Biaya</td>
@@ -53,8 +103,8 @@
                 <td>Jatuh Tempo Selanjutnya</td>
                 <td>
                     <?php
-                        $startdateJatumTempoLanjutan=strtotime(date("F j Y"));
-                        $enddate=strtotime("+1 Years", $startdateJatumTempoLanjutan);
+                        // $startdateJatumTempoLanjutan=strtotime(date("F j Y"));
+                        // $enddate=strtotime("+1 Years", $startdateJatumTempoLanjutan);
                         // echo date("d-M-Y", $enddate) . "<br>";
                     ?>
                     <input type="text" name="tempo2" value="<?php echo date("Y-m-d", $enddate); ?>" readonly>
@@ -64,8 +114,8 @@
                 <td></td>
                 <td><input type="submit" value="Simpan"></td>
             </tr>
-        </table>
-    </form>
+        </table> -->
+    <!-- </form> -->
 
 <?php
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -76,7 +126,6 @@
         $tahun = $_POST['tahunajaran'];
         $biaya = $_POST['biaya'];
         $tempo = $_POST['tempo'];
-        $bulan = date("F Y", $startdateJatumTempoLanjutan);
         // echo $bulan."bulan<br>";
 
         if(empty($nama) || empty($nis) || empty($kelas) || empty($tahun) || empty($biaya)){
@@ -120,6 +169,6 @@
     
     
     
-    
+    ob_flush();
     include "footer.php";
 ?>

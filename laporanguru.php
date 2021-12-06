@@ -14,6 +14,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplikasi Pembayaran SPP</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
@@ -68,7 +72,7 @@
 <?php 
 if(isset($_GET['choice'])){ ?>
 
-    <table border="1"style="width: 100%; border-collapse: collapse; ">
+    <table class="table table-bordered table-striped">
         <?php
             $no = 1;
             if($_GET['choice'] == 'Walikelas'){ ?>

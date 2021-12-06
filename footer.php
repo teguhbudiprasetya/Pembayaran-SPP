@@ -1,4 +1,6 @@
-<hr>
-<i>Dibuat oleh : Teguh Prasetya Tahun 2021</i>
+        </div>
+    </div>
+
+</div>
 </body>
 </html>

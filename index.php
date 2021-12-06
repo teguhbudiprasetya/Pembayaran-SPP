@@ -4,7 +4,7 @@
 
 <section>
     <h3>Selamat datang di dashboard aplikasi pembayaran SPP</h3>
-    <p>Silahkan dikelola dengan baik ya!</p>
+    <h4>SMK NEGERI 1 BRONDONG</h4>
     <hr>
 </section>
 

@@ -2,13 +2,13 @@
     include "header.php";
 ?>
 
-<h3>Data Guru</h3>
-<a href="tambahguru.php">Tambah Data</a>
-<table border="1">
+<h1 class="panel-name">Data Guru</h1>
+<a href="tambahguru.php" class="btn btn-primary btn-sm">Tambah Data</a>
+<table style="margin-top: 20px;" class="table table-hover table-bordered">
     <tr>
-        <th>No</th>
+        <th style="width: 40px; text-align:center;">No</th>
         <th>Nama Guru</th>
-        <th>Aksi</th>
+        <th style="width: 138px; text-align:center;">Aksi</th>
     </tr>
     <?php
     $sql = mysqli_query($connect, "SELECT * FROM guru ORDER BY idguru");
@@ -17,9 +17,9 @@
 		echo "<tr>
 			<td>$no</td>
 			<td>$d[namaguru]</td>
-			<td>
-				<a href='editguru.php?id=$d[idguru]'>Edit</a> /
-				<a href='hapusguru.php?id=$d[idguru]'>Hapus</a>
+			<td style='text-align: center;'>
+				<a class='btn btn-primary btn-sm' href='editguru.php?id=$d[idguru]'>Edit</a> 
+				<a class='btn btn-danger btn-sm' href='hapusguru.php?id=$d[idguru]'>Hapus</a>
 			</td>
 		</tr>";
 		$no++;

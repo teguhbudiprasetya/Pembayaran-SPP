@@ -7,19 +7,19 @@ $sqlEdit = mysqli_query($connect, "SELECT * FROM guru WHERE idguru='$_GET[id]'")
 // echo print_r($_GET);
 $e=mysqli_fetch_array($sqlEdit);
 ?>
-<h3>Edit Data Guru</h3>
+<h3 class="panel-name">Edit Data Guru</h3>
 <form method="post" action="">
-	<input type="hidden" name="idguru" value="<?php echo $e['idguru']; ?>" />
-	<table>
-		<tr>
-			<td>Nama Guru</td>
-			<td><input type="text" name="namaguru" value="<?php echo $e['namaguru']; ?>" /></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td><input type="submit" value="Update" /></td>
-		</tr>
-	</table>
+	<div class='form-group'>
+            <label for='password'>Nama Guru</label>
+            <div class='form-control-lg'>
+        <input type='text' class='form-control'  name='namaguru' value="<?php echo $e['namaguru']; ?>">
+            </div>
+        </div>
+        <div class='form-group row'>
+            <div class='col-sm-10'>
+                <button type='submit' class='btn btn-success'>Update</button>
+            </div>
+        </div>
 </form>
 
 <?php

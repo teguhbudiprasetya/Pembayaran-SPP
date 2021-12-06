@@ -1,30 +1,27 @@
 <?php include "header.php" ?>
 
-<h3>Laporan Guru dan Siswa</h3>
-<ul>
-    <li><a href="laporanguru.php">Laporan Guru</a></li>
-    <li><a href="laporansiswa.php?">Laporan Siswa</a></li>
-</ul>
-<form method="get" action="laporancarisiswa.php" target="blank">
-    <table style="margin-left: 20px;">
-        <tr>
-            <td>Dari</td>
-            <td><input type="date" name="dari"></td>
-            <td>Hingga</td>
-            <td><input type="date" name="hingga"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <input type="submit" name="button" value="Cari" >
-            </td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
+<h1 class="panel-name">Laporan Guru dan Siswa</h1>
+<a class="btn btn-info btn-sm" href="laporanguru.php">Laporan Guru</a>
+<a class="btn btn-info btn-sm" href="laporansiswa.php?">Laporan Siswa</a>
+<form style="margin-top: 20px;"method="get" action="laporancarisiswa.php" target="blank">
+    <div class='form-group'>
+        <label for='password'>Dari</label>
+        <div class='form-control-lg' style="width: 15%;">
+            <input type='date' class='form-control'  name='dari'>
+        </div>
+    </div>
+    <div class='form-group' >
+        <label for='password'>Hingga</label>
+        <div class='form-control-lg' style="width: 15%;">
+            <input type='date' class='form-control'  name='hingga'>
+        </div>
+    </div>
+    <div class='form-group row'>
+            <div class='col-sm-10'>
+                <button type='submit' class='btn btn-success'>Cari</button>
+            </div>
+    </div>
 </form>
 
-<?php
-?>
 
 <?php include "footer.php" ?>

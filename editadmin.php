@@ -1,53 +1,45 @@
-<?php include "header.php"; ?>
-
-
-
-<h3>Edit data admin</h3>
+﻿<?php 
+include "header.php"; 
+ob_start();
+?>
+<h1 class="panel-name">Edit data admin</h1>
 <?php
     $sql = mysqli_query($connect, "SELECT * FROM admin WHERE idadmin='$_GET[id]'");
     $editAdmin = mysqli_fetch_array($sql);
     echo"
-    
     <form method='post'>
-    <table>
-        <tr>
-            <td>Nama lengkap</td>
-            <td>:</td>
-            <td>
-            <input type='text' name='nama' value='$editAdmin[namalengkap]'>
-            </td>
-        </tr>
-        <tr>
-            <td>Username</td>
-            <td>:</td>
-            <td>
-            <input type='text' name='username' value='$editAdmin[username]'>
-            </td>
-        </tr>
-        <tr>
-            <td>Password</td>
-            <td>:</td>
-            <td>
-            <input type='text' name='password' value='$editAdmin[password]'>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td>
-                <input type='submit' value='Simpan'>
-            </td>
-        <tr>
-    </table>
-    </form>
-    ";
+    <div class='form-group'>
+            <label for='nama'>Nama Lengkap</label>
+            <div class='form-control-lg'>
+                <input type='text' class='form-control' id='nama' name='nama' value='$editAdmin[namalengkap]'>
+            </div>
+        </div>
+     <div class='form-group'>
+     <label for='username'>Username</label>
+     <div class='form-control-lg'>
+     <input type='text' class='form-control' name='username' value='$editAdmin[username]'>
+     </div>
+     </div>
+     
+        <div class='form-group'>
+            <label for='password'>Password</label>
+            <div class='form-control-lg'>
+        <input type='text' class='form-control'  name='password' value='$editAdmin[password]'>
+            </div>
+        </div>
+        <div class='form-group row'>
+            <div class='col-sm-10'>
+                <button type='submit' class='btn btn-success'>Update</button>
+            </div>
+        </div>
+        </form>";
     ?>
-<?php
+    <?php
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $newName = $_POST['nama'];
         $newUsername = $_POST['username'];
         $newPassword = $_POST['password'];
-
+        
         if(empty($newName) || empty($newUsername) || empty($newPassword)){
             echo "Form kurang lengkap!";
         }
@@ -62,4 +54,7 @@
         }
     }
 ?>
-<?php include "footer.php"; ?>
+<?php 
+ob_flush();
+include "footer.php"; 
+?>

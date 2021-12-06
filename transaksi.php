@@ -1,18 +1,18 @@
 <?php include "header.php" ;?>
 
-
 <h3>Transaksi pembayaran</h3>
-<form method="get" action="">
-    <table>
-        <tr>
-            <td>NIS :</td>
-            <td><input type="text" name="nis"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><input type="submit" name="" value="Cari Siswa"></td>
-        </tr>
-    </table>
+<form id="noprint" method="get" action="">
+    <div class='form-group'>
+        <label for='password'>NIS</label>
+        <div class='form-control-lg'>
+            <input type='text' class='form-control'  name='nis'>
+        </div>
+    </div>
+    <div class='form-group row'>
+            <div class='col-sm-10'>
+                <button type='submit' class='btn btn-success'>Simpan</button>
+            </div>
+    </div>
 </form>
 
 <?php
@@ -24,8 +24,8 @@
         $kelas = $ds['kelas'];
     
 ?>
-    <h3>Informasi Siswa</h3>
-    <table  style="width:35%;">
+    <h1 class="panel-name">Informasi Siswa</h1>
+    <table  style="width:35%; font-size:medium;">
         <tr>
             <td>NIS </td>
             <td>:</td>
@@ -44,16 +44,16 @@
     </table>
     
     <h3>Tagihan SPP Siswa</h3>
-    <table border="1" style="width: 60%; text-align:center;">
+    <table style="margin-top: 20px; text-align:center;" class="table table-hover table-bordered">
         <tr>
-            <th>No</th>
-            <th>Bulan</th>
-            <th>Jatuh Tempo</th>
-            <th>No. Bayar</th>
-            <th>Tgl. Bayar</th>
-            <th>Jumlah</th>
-            <th>Keterangan</th>
-            <th>Bayar</th>
+            <th style="text-align: center;">No</th>
+            <th style="text-align: center;">Bulan</th>
+            <th style="text-align: center;">Jatuh Tempo</th>
+            <th style="text-align: center;">No. Bayar</th>
+            <th style="text-align: center;">Tgl. Bayar</th>
+            <th style="text-align: center;">Jumlah</th>
+            <th style="text-align: center;">Keterangan</th>
+            <th style="text-align: center;">Bayar</th>
         </tr>
 
         <?php

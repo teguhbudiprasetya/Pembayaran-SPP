@@ -1,36 +1,30 @@
 <?php include "header.php" ?>
 <h3>Tambah Data Admin</h3>
 <form method='post'>
-    <table>
-        <tr>
-            <td>Nama lengkap</td>
-            <td>:</td>
-            <td>
-            <input type='text' name='nama'>
-            </td>
-        </tr>
-        <tr>
-            <td>Username</td>
-            <td>:</td>
-            <td>
-            <input type='text' name='username'>
-            </td>
-        </tr>
-        <tr>
-            <td>Password</td>
-            <td>:</td>
-            <td>
-            <input type='text' name='password'>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td>
-                <input type='submit' value='Simpan'>
-            </td>
-        <tr>
-    </table>
+<div class='form-group'>
+    <label for='nama'>Nama Lengkap</label>
+    <div class='form-control-lg'>
+        <input type='text' class='form-control' id='nama' name='nama'>
+    </div>
+    </div>
+     <div class='form-group'>
+        <label for='username'>Username</label>
+        <div class='form-control-lg'>
+           <input type='text' class='form-control' name='username'>
+        </div>
+     </div>
+     
+    <div class='form-group'>
+        <label for='password'>Password</label>
+        <div class='form-control-lg'>
+    <input type='text' class='form-control'  name='password'>
+        </div>
+    </div>
+    <div class='form-group row'>
+        <div class='col-sm-10'>
+            <button type='submit' class='btn btn-success'>Simpan</button>
+        </div>
+    </div>
 </form>
 <?php
     if($_SERVER['REQUEST_METHOD'] == "POST"){

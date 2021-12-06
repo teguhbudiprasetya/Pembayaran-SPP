@@ -1,0 +1,9 @@
+.panel-name{
+    margin-bottom: 30px;
+    /* margin-top: -20px; */
+}
+@media print{
+    button{
+        display: none;
+    }
+}
